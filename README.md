@@ -56,7 +56,7 @@ __Example:UnbiasedTime.Instance.Now().AddSeconds(10f);__
 
 ## [AndroidRuntimPermissions](AndroidRuntimPermissions.md)
 
-## [Flurry、Appflyr、TalkingData](Statistics.md)
+## [Flurry、Appflyer、TalkingData](Statistics.md)
 
 ## [HapticFeedBack](HapticFeedBack.md)
 
