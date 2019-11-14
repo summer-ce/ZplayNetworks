@@ -9,7 +9,7 @@ AppFlyerSDKManager.Instance.InitializeAppFlyer();
 * event：
 AppFlyerSDKManager.Instance. AppFlyerLogEvent(string eventName, Dictionary<string, string> eventValues);
 
-<font color='red'>Note: The secondary function is open for you. Please do not add your content to this function to avoid accidentally deleting the code you added by using dynamic deletion. </font>
+### Note: The secondary function is open for you. Please do not add your content to this function to avoid accidentally deleting the code you added by using dynamic deletion.
 
 ## Flurry
 * Official website link：https://developer.yahoo.com/flurry/docs/integrateflurry/unity/
@@ -35,7 +35,7 @@ TalkingDataSDKManager.Instance.InitializeTalkingData();
 * Eevent：  
 TalkingDataSDKManager.Instance.TalkingDataLogEvent(string eventId,Dictionary<string,object> parameters);
 
-#### Note: Flurry、 Appflyer、Talking Data statistics sdk related keys or parameters need to be filled in this .asset file
+### Note: Flurry、 Appflyer、Talking Data statistics sdk related keys or parameters need to be filled in this .asset file
 
 ### If you add this sdk, please click the Setting Manager/Analysis... under the Editor zplay tab to create the AnalysisSetting.asset file.
 

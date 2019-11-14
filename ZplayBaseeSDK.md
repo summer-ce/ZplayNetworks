@@ -35,13 +35,13 @@ PurchaserManager.PurchaseSucceeded += PurchaseSucceeded;
 __Payment failed__  
 PurchaserManager.PurchaseFailed += PurchaseFailed;   
 
-<font color=red>Note: If you don't know, please check out PurchaserManager.cs.</font>
+### Note: If you don't know, please check out PurchaserManager.cs.
 
 ### Subscription  
 * Detect if the incoming subscription id is in the subscription state and return whether it is in the subscription state
 SubscriptionController.Instance. CheckSubscription(String subscriptionId,Action<Boolean> subscriptionCallback);
 
-<font color=red>Note: Please refer to the SubscriptionController.cs for your specific </font>
+### Note: Please refer to the SubscriptionController.cs for your specific
 
 ### Login, leaderboard
 * Initialize  
@@ -61,7 +61,7 @@ __Show leaderboards, such as transferring leaderboardId to display a single lead
 __Metadata ==null is more ID submitted leaderboard score, !=null is more id and metadata label submission ranking__   
 SocialNetworksManager.Instance.ReportLeaderboard(string leaderboard,long score,Action<Boolean> callback = null,String metadata = null); 
 
-<font color=red>Note: See SocialNetworksManager.cs for details. </font>
+### Note: See SocialNetworksManager.cs for details.
 
 
 
