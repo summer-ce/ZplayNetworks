@@ -28,10 +28,12 @@ The Zplay Play Game Plugin for Unity lets you edit the Zplay Play Game API throu
 	
 ## Configure Your Game
 Import the latest zplay unity plugin from current-build. The zplay tab will appear above the unity editor. Click on the tab and the following will appear:
+![click Get Resources](source/docgen/Zplay.png "Show the resources data")
+
 * Setting Manager  
 __Analysis…__：Create an AnalysisSetting.asset file in the ZplaySDK/Resources/ path  
 __Purchaseers…__：Create the PurchaserSetting.asset file in the ZplaySDK/Resources/ path  
-
+![click Get Resources](source/docgen/SettingManager.png "Show the resources data")
 * Deleate All PlayerPrefs  
 Delete all player prefs files for this project  
 * About Zplay SDK  
@@ -39,6 +41,8 @@ Jump zplay SDK feedback page
 * Documentation…   
 Jump to sdk access document directory  
 * Manager SDKs…  
+![click Get Resources](source/docgen/ZplaySDKManagr.png "Show the resources data")
+
 
 
 
