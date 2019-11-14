@@ -47,6 +47,20 @@ __Jump to sdk access document directory__
 
 ![click Get Resources](source/docgen/ZplaySDKManagr.png "Show the resources data")
 
+## UnbiaseedTime  
+* Unity Anti-Cheat Time Plugin
+* To add time,call__:__
+__Example:UnbiasedTime.Instance.Now().AddSeconds(10f);__
+
+## [ZplayBaseeSDK](ZplayBaseeSDK.md)
+
+## [AndroidRuntimPermissions](AndroidRuntimPermissions.md)
+
+## [Flurry、Appflyr、TalkingData](Statistic.md)
+
+## [HapticFeedBack](HapticFeedBack.md)
+
+## [Unity-logs-Viewer](Unity-logs-Viewer.md)
 
 
 
