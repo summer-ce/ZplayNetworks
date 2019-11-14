@@ -49,14 +49,14 @@ __Jump to sdk access document directory__
 
 ## UnbiaseedTime  
 * Unity Anti-Cheat Time Plugin
-* To add time,call__:__
+* To add time,call：
 __Example:UnbiasedTime.Instance.Now().AddSeconds(10f);__
 
 ## [ZplayBaseeSDK](ZplayBaseeSDK.md)
 
 ## [AndroidRuntimPermissions](AndroidRuntimPermissions.md)
 
-## [Flurry、Appflyr、TalkingData](Statistic.md)
+## [Flurry、Appflyr、TalkingData](Statistics.md)
 
 ## [HapticFeedBack](HapticFeedBack.md)
 

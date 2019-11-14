@@ -16,7 +16,7 @@
 * Failure
 ## To related function, call:  
 __HapticFeedbackManager.Instance. HapticFeedbackTrigger(FeedbackType feedbackType);__
-*Check if the device supports vibration,call：
+* Check if the device supports vibration,call：
 __Bool =HapticFeedbackManager.Instance.DeviceSupportsHaptic();__
 
 
