@@ -38,11 +38,11 @@ __Purchaseers…__：Create the PurchaserSetting.asset file in the ZplaySDK/Reso
 ![click Get Resources](source/docgen/SettingManager.png "Show the resources data")
 
 * Deleate All PlayerPrefs  
-Delete all player prefs files for this project  
+__Delete all player prefs files for this project__
 * About Zplay SDK  
-Jump zplay SDK feedback page  
+__Jump zplay SDK feedback page__  
 * Documentation…   
-Jump to sdk access document directory  
+__Jump to sdk access document directory__  
 * Manager SDKs…     
 
 ![click Get Resources](source/docgen/ZplaySDKManagr.png "Show the resources data")
