@@ -37,6 +37,7 @@ __Purchaseers…__：Create the PurchaserSetting.asset file in the ZplaySDK/Reso
 
 ![click Get Resources](source/docgen/SettingManager.png "Show the resources data")
 
+
 * Deleate All PlayerPrefs  
 __Delete all player prefs files for this project__
 * About Zplay SDK  
@@ -46,6 +47,12 @@ __Jump to sdk access document directory__
 * Manager SDKs…     
 
 ![click Get Resources](source/docgen/ZplaySDKManagr.png "Show the resources data")
+
+* Note：   
+__Each time you download the specified plugin, please execute the button shown in the screenshot below. This button operation deletes the dynamically downloaded .unitypackage file.__     
+__Please be sure to do this in order to reduce your package size after dynamic download.__     
+
+![click Get Resources](source/docgen/Delete_UnityPackage.png "Show the resources data")
 
 ## UnbiaseedTime  
 * Unity Anti-Cheat Time Plugin
