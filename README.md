@@ -43,6 +43,8 @@ __Jump to sdk access document directory__
 
 ![click Get Resources](source/docgen/ZplaySDKManagr.png "Show the resources data")
 
+__Note: Each time you import the corresponding .unitypackage, please click on DelUPK. This button works for me to delete the .unitypakcage file you downloaded, which has reduced your package size.__
+
 ## UnbiaseedTime  
 * Unity Anti-Cheat Time Plugin
 * To add time,call：
