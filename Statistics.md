@@ -37,7 +37,7 @@ TalkingDataSDKManager.Instance.TalkingDataLogEvent(string eventId,Dictionary<str
 
 ### Note: Flurry、 Appflyer、Talking Data statistics sdk related keys or parameters need to be filled in this .asset file
 
-### If you add this sdk, please click the Setting Manager/Analysis... under the Editor zplay tab to create the AnalysisSetting.asset file.
+### If you add this sdk, please click the Zplay/Data/Game settings, under the Editor zplay tab to create the GameSettings.asset file.
 
 ![click Get Resources](source/docgen/AnalysisSetting.png "Show the resources data")
 

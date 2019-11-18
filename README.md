@@ -13,6 +13,8 @@ The Zplay Play Game Plugin for Unity lets you edit the Zplay Play Game API throu
  * Unbiased time     
  * Android runtime permissions     
  * Unity logs viewe      
+ * Google and IOS Purchasr    
+ * Googl and IOS SocialNetworking   
  
  ### Features 
  * Easy project setup for compiler windows (integrated into unity)     
@@ -31,12 +33,6 @@ Import the latest zplay unity plugin from current-build. The zplay tab will appe
 
 ![click Get Resources](source/docgen/Zplay.png "Show the resources data")
 
-* Setting Manager  
-__Analysis…__：Create an AnalysisSetting.asset file in the ZplaySDK/Resources/ path  
-__Purchaseers…__：Create the PurchaserSetting.asset file in the ZplaySDK/Resources/ path  
-
-![click Get Resources](source/docgen/SettingManager.png "Show the resources data")
-
 * Deleate All PlayerPrefs  
 __Delete all player prefs files for this project__
 * About Zplay SDK  
@@ -52,7 +48,10 @@ __Jump to sdk access document directory__
 * To add time,call：
 __Example:UnbiasedTime.Instance.Now().AddSeconds(10f);__
 
-## [ZplayBaseeSDK](ZplayBaseeSDK.md)
+## [Zplay Base]
+__Zplay Base must be imported, this is the default base package for zplay__
+* Zplay Base contains     
+__Some extension libraries available for development in the zplay package can be modified or called by you. If you need, please check it yourself.__
 
 ## [AndroidRuntimPermissions](AndroidRuntimPermissions.md)
 
@@ -61,6 +60,9 @@ __Example:UnbiasedTime.Instance.Now().AddSeconds(10f);__
 ## [HapticFeedBack](HapticFeedBack.md)
 
 ## [Unity-logs-Viewer](Unity-logs-Viewer.md)
+
+## [GP_IOS_Purchasr、GP_IOS_SocialNetworking](GP_IOS_Purchasr_SocialNetWorking.md)
+__This is the google play and ios payment and login list__
 
 
 
