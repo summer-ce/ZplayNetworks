@@ -257,8 +257,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: Keystore/Zplay_samles.keystore'
-  AndroidKeyaliasName: zplay_samples
+  AndroidKeystoreName: F:/Zplay_AllProject/Beatracer/UnityProject/beatracer.keystore
+  AndroidKeyaliasName: beatracer
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

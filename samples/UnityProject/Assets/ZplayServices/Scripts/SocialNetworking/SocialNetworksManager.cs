@@ -22,7 +22,7 @@ namespace Assets.ZplaySDK.Scripts.SocialNetworking
             base.OnDestroy();
         }
 
-        public void Initialize()
+        public void Initialize(Action<Boolean> callback)
         {
             foreach (var socialNetworkType in Enum.GetValues(typeof(SocialNetworkType)).Cast<SocialNetworkType>().Distinct())
             {
@@ -30,14 +30,7 @@ namespace Assets.ZplaySDK.Scripts.SocialNetworking
             }
             Authenticate(SocialNetworkType.Local, result =>
             {
-                if (result)
-                {
-                    //登录成功可以进行操作
-                }
-                else
-                {
-                    //登录失败进行操作
-                }
+                callback.SafeInvoke(result);
             });
         }
 
@@ -55,7 +48,6 @@ namespace Assets.ZplaySDK.Scripts.SocialNetworking
                 PlayGamesPlatform.DebugLogEnabled = true;
                 // Activate the Google Play Games platform
                 PlayGamesPlatform.Activate();
-#else
 #endif
                 if(Social.localUser == null)
                 {
@@ -78,15 +70,14 @@ namespace Assets.ZplaySDK.Scripts.SocialNetworking
                             {
                                 if (flag)
                                 {
-                                    //登录成功处理相关操作
+                                    //Authentication success
+                                    foreach (var authenticationCallback in _authenticationCallbacks[socialNetworkType])
+                                    {
+                                        authenticationCallback.SafeInvoke(flag);
+                                    }
+                                    _authenticationCallbacks[socialNetworkType].Clear();
+                                    Authenticated.SafeInvoke(socialNetworkType);
                                 }
-
-                                foreach (var authenticationCallback in _authenticationCallbacks[socialNetworkType])
-                                {
-                                    authenticationCallback.SafeInvoke(flag);
-                                }
-                                _authenticationCallbacks[socialNetworkType].Clear();
-                                Authenticated.SafeInvoke(socialNetworkType);
                             });
                         }
                     }

@@ -19,6 +19,11 @@ MonoBehaviour:
   APPFLYER_ANDROID_PACKAGE_NAME: com.zplay.beatracer
   TALKINGDATA_APP_ID: 5DED0BE0D6084323A54EEEFDC6C57D5D
   TALKINGDATA_CHANNEL_ID: your_channel_id
-  consumableList: []
+  consumableList:
+  - coin_pack_1
+  - coin_pack_2
+  - coin_pack_3
+  - coin_pack_4
+  - coin_pack_5
   nonConsumagleList: []
   subscriptionList: []

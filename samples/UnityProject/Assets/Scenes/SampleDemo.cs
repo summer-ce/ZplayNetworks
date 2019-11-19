@@ -4,6 +4,9 @@ using UnityEngine;
 using Assets.ZplaySDK.Scripts.Services;
 using UnityEngine.UI;
 using System;
+using Assets.ZplayServices.Scripts.Purchaser;
+using UnityEngine.Purchasing;
+using Assets.ZplaySDK.Scripts.SocialNetworking;
 
 public class SampleDemo : MonoBehaviour
 {
@@ -15,13 +18,32 @@ public class SampleDemo : MonoBehaviour
     private String _timerFormat;
     [SerializeField]
     private Text unbiasedTimeText;
+    [SerializeField]
+    private Text purchaserPrice;
 
     private Boolean isOpenfeedback;
     private void Start()
     {
-        // ZplayLogger.SetDebug(true);
+         ZplayLogger.SetDebug(true);
         InitializationStatistics();
         Debug.Log(string.Format("{0}{1}", "Zplay", "===iii==="));
+    }
+
+    private void OnEnable()
+    {
+        PurchaserManager.Initialized += Initialized;
+        PurchaserManager.PurchaseStarted += PurchaseStarted;
+        PurchaserManager.PurchaseSucceeded += PurchaseSucceeded;
+        PurchaserManager.PurchaseFailed += PurchaseFailed;
+        SocialNetworksManager.Authenticated += Authenticated;
+    }
+    private void OnDisable()
+    {
+        PurchaserManager.Initialized -= Initialized;
+        PurchaserManager.PurchaseStarted -= PurchaseStarted;
+        PurchaserManager.PurchaseSucceeded -= PurchaseSucceeded;
+        PurchaserManager.PurchaseFailed -= PurchaseFailed;
+        SocialNetworksManager.Authenticated += Authenticated;
     }
 
     // Update is called once per frame
@@ -42,6 +64,7 @@ public class SampleDemo : MonoBehaviour
             }
         }
     }
+
     private void InitializationStatistics()
     {
         FlurrySDKManager.Instance.InitializeFlurry();
@@ -61,6 +84,92 @@ public class SampleDemo : MonoBehaviour
         FlurrySDKManager.Instance.FlurryLogEvent(key, dic);
         AppFlyerSDKManager.Instance.AppFlyerLogEvent(key, dic);
         TalkingDataSDKManager.Instance.TalkingDataLogEvent(key, new Dictionary<string, object> { { "Eevnt", "Value" } });
+    }
+
+    public void InitializedSocial()
+    {
+        SocialNetworksManager.Instance.Initialize(result=>
+        {
+            if (result)
+            {
+                ZplayLogger.Log("login successfully");
+            }
+            else
+            {
+                ZplayLogger.Log("login failure");
+            }
+        });
+    }
+    public void ShowLeaderboardUI()
+    {
+        SocialNetworksManager.Instance.ShowLeaderboardUI(null, result =>
+         {
+             if (result)
+             {
+                 ZplayLogger.Log("show ladr board UI succ");
+             }
+         });
+    }
+    public void ShowAchievementsUI()
+    {
+        SocialNetworksManager.Instance.ShowAchievementsUI(result =>
+        {
+            if (result)
+            {
+                ZplayLogger.Log("show achievements UI succ");
+            }
+        });
+    }
+    private void Authenticated(SocialNetworkType socialNetworkType)
+    {
+        if(socialNetworkType == SocialNetworkType.Local)
+        {
+            ZplayLogger.Log("The login has been authenticated ：" + socialNetworkType.ToString());
+        }
+    }
+    public void InitializedPurchaser()
+    {
+        PurchaserManager.Instance.Initialize();
+    }
+    
+    public void BuyPurchaser()
+    {
+        PurchaserManager.Instance.BuyProductId("coin_pack_1");
+    }
+    public void GetPurchaserPrice()
+    {
+        Product product = PurchaserManager.Instance.OnProductPrice("coin_pack_1");
+        if (product != null)
+        {
+            ZplayLogger.Log(product.metadata.localizedPrice + " == " + product.metadata.localizedPriceString);
+            purchaserPrice.text = product.metadata.localizedPriceString;
+        }
+    }
+
+    private void Initialized(Boolean isInitial)
+    {
+        if (isInitial) ZplayLogger.Log("Purchasr initialized succ");
+    }
+    private void PurchaseStarted(string isstartd)
+    {
+        if (isstartd.Equals("coin_pack_1"))
+        {
+            ZplayLogger.Log("purchase started");
+        }
+    }
+    private void PurchaseSucceeded(Product product,string source)
+    {
+        if (product.definition.id.Equals("coin_pack_1"))
+        {
+            ZplayLogger.Log("Purchase Succeeded");
+        }
+    }
+    private void PurchaseFailed(Product product, PurchaseFailureReason purchaseFailureReason)
+    {
+        if (product.definition.id.Equals("coin_pack_1"))
+        {
+            ZplayLogger.Log("Purchase Failed");
+        }
     }
 
     public void CheckOnePermissions()
